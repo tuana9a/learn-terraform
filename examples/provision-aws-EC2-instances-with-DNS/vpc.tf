@@ -3,10 +3,14 @@ resource "aws_vpc" "vpc_1" {
 }
 
 resource "aws_subnet" "subnet_1" {
-  vpc_id     = aws_vpc.vpc_1.id
-  cidr_block = "10.0.1.0/24"
-  # map_public_ip_on_launch = true
-  availability_zone = "ap-southeast-1a"
+  vpc_id            = aws_vpc.vpc_1.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "${var.aws_region}a"
+
+  # auto assign public ip to newly created instances
+  # default is false
+  # not required if assign elastic ip directly to the instance
+  map_public_ip_on_launch = true
 }
 
 resource "aws_internet_gateway" "igw_1" {

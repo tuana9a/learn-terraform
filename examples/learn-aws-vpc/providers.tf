@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  region                   = "ap-southeast-1"
-  shared_credentials_files = ["~/.aws/credentials"]
-  profile                  = "tuana9a"
+  region                   = var.aws_region
+  shared_credentials_files = var.aws_credential_files
+  profile                  = var.aws_profile_name
 }

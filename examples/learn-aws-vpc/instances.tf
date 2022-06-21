@@ -1,5 +1,5 @@
 resource "aws_instance" "instance_1" {
-  instance_type = "t2.micro"
+  instance_type = var.aws_ec2_instance_type
   ami           = data.aws_ami.ubuntu_server.id
   subnet_id     = aws_subnet.subnet_1.id
   private_ip    = "10.0.1.11"
@@ -15,12 +15,12 @@ resource "aws_instance" "instance_1" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.public_ip} >> ip.local.txt"
+    command = "echo $(date '+%F %H:%M:%S') [INFO] 'id=\"${self.id}\" ip=\"${self.public_ip}\"' >> ip.log"
   }
 }
 
 resource "aws_instance" "instance_2" {
-  instance_type = "t2.micro"
+  instance_type = var.aws_ec2_instance_type
   ami           = data.aws_ami.ubuntu_server.id
   subnet_id     = aws_subnet.subnet_2.id
   private_ip    = "10.0.2.12"
@@ -35,6 +35,6 @@ resource "aws_instance" "instance_2" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.public_ip} >> ip.local.txt"
+    command = "echo $(date '+%F %H:%M:%S') [INFO] 'id=\"${self.id}\" ip=\"${self.public_ip}\"' >> ip.log"
   }
 }

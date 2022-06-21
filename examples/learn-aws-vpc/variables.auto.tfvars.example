@@ -1,0 +1,7 @@
+aws_region = ""     
+aws_credential_files = [""]
+aws_profile_name = ""
+aws_ec2_instance_type = ""
+aws_key_pair_name = ""
+aws_key_pair_public_key_file = ""
+

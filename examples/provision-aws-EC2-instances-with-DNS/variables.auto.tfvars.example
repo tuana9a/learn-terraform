@@ -1,0 +1,11 @@
+aws_region = ""     
+aws_credential_files = [""]
+aws_profile_name = ""
+aws_ec2_instance_names = [""]
+aws_ec2_instance_names = ""
+aws_key_pair_name = ""
+aws_key_pair_public_key_file = ""
+
+cloudflare_email = ""
+cloudflare_api_token = ""
+cloudflare_zone_id = ""

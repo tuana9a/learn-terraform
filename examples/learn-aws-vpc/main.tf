@@ -1,20 +1,15 @@
-variable "aws_region" {
-  description = "AWS region"
-  type        = string
-  default     = "ap-southeast-1"
-}
-
 resource "aws_vpc" "vpc_1" {
   cidr_block = "10.0.0.0/16"
 }
 
 resource "aws_subnet" "subnet_1" {
-  vpc_id     = aws_vpc.vpc_1.id
-  cidr_block = "10.0.1.0/24"
+  vpc_id            = aws_vpc.vpc_1.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "${var.aws_region}a"
+
   # auto assign public IP to ec2 instance when created
   # default is false
   map_public_ip_on_launch = true
-  availability_zone       = "${var.aws_region}a"
 }
 
 resource "aws_subnet" "subnet_2" {

@@ -1,10 +1,10 @@
-![vpc-diagram](./img/vpc-diagram-1.png)
+![vpc-diagram-1](./imgs/vpc-diagram-1.png)
 
 # VPC - virtual private cloud
 
 vpc live in region and different from region to region, vpc to vpc
 
-![vpc-diagram](./img/vpc-diagram-2.png)
+![vpc-diagram-2](./imgs/vpc-diagram-2.png)
 
 vpc is above availability zones
 
